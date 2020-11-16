@@ -1,6 +1,6 @@
 # OBS STT Subtitles using Microsoft Azure Cognitive SDK
 
-Welcome! This application presents Speech to Text subtitles in a standalone window that can be window captured by OBS or other prograsms. It is powered by Microsoft's Cognitive STT service. This is the same service that Microsoft Cortana uses.
+Welcome! This application presents Speech to Text subtitles in a standalone window that can be window captured by OBS or other programs. It is powered by Microsoft's Cognitive STT service. This is the same service that Microsoft Cortana uses.
 
 > Note: The micrsoft cognitive service is not free and you will need to provide this program with a subscription key in order to use it. See more info here: https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
 
