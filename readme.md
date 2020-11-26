@@ -16,31 +16,42 @@ Extract the files from the zip into a location on your hard drive.
 
 ## Step 3 - Run AzureSTTSubtitles.exe
 
- Enter Azure key information and settings you would like. Don't forget to click Save.
-
+Enter Azure key information and settings you would like. Don't forget to click Save.
 
 # Starting Subtitles
 
- There are two options for running the subtitles depending on your capture program. Option 1 (browser source) is prefered, but does not work with streamlabs OBS.
+ There are two options for running the subtitles depending on your capture program. Option 1 (browser source) is preferred, but does not work with streamlabs OBS.
 
-## Option 1 -  Add an OBS Browser Source
+## Option 1 - Add an OBS Browser Source (Works with OBS)
 
-- Add a new browser source and enter the file location of the subtitles.html with `file:///` in front. I.e. `file:///C:/Repos/azure-stt-subtitles-electron/html/subtitles.html`
-- Subtitles.html is located in the html folder of the app.
-- Check the options for shutdown source when not visible and refresh browser when scene becomes active.
-- Done!
+### Step 1: Add a new browser source
+1. enter the file location of the subtitles.html with `file:///` in front. I.e. `file:///C://azure-stt-subtitles-electron/resources/app/html/subtitles.html`
+ - Subtitles.html is located in the resources\app\html folder.
+2. Check the options for shutdown source when not visible and refresh browser when scene becomes active.
 
-## Option 2 - Add an OBS Window Capture
+### Step 2: Add OBS launch parameter to OBS shortcut
+Currently, the OBS browser source window does not support showing the alert to allow microphone access in order to accept it. This launch parameter will allow microphone access to the OBS browser sources.
 
+OBS bug documented here: https://obsproject.com/forum/threads/using-browser-as-source-camera-mic-not-blocked-but-crossed-out-camera-image-on-obs-screen.123776/
+
+1. Locate and right click on the shortcut you use to open OBS.
+2. Select "Properties"
+3. In the "Target" box, add `--use-fake-ui-for-media-stream` to the very end. It should look similar to `"C:\Program Files (x86)\obs-studio\bin\64bit\obs64.exe" --use-fake-ui-for-media-stream`
+
+Make sure to start OBS with this shortcut for the subtitles to work. If the subtitle program cannot access your microphone, a message will display after 15 seconds regarding this step.
+
+Done! There is no need to use the "Start Subtitles" button in the app. It is only used for option 2.
+
+## Option 2 - Add an OBS Window Capture (Works with Streamlabs OBS)
+
+### Step 1: Add a window capture
 - Click start subtitles in the subtitle program.
 - Add a new window capture source in OBS and select the subtitle window titled "OBS STT Subtitles - Azure"
 - Uncheck Capture Cursor
 
-Add a Color Key Filter
-
+### Step 2: Add a Color Key Filter
 - In order to make the subtitle window transparant, you can add a color key filer for whichever color you chose the app to be.
 - Adjust the similarity and softness until the subtitles appear cleanly without background color
-
 
 ## Setup Complete!
 
