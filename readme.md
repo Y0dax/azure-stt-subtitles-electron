@@ -4,6 +4,8 @@ Welcome! This application presents Speech to Text subtitles that can be captured
 
 > Note: The micrsoft cognitive service is not free and you will need to provide this program with a subscription key in order to use it. See more info here: https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
 
+![subtitles](https://user-images.githubusercontent.com/45214/81859404-0abbf580-951a-11ea-9334-9fbee17416fd.gif)
+
 # Download & Install
 
 ## Step 1 - Download latest release
