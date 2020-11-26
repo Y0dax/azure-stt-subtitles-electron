@@ -4,7 +4,7 @@ Welcome! This application presents Speech to Text subtitles that can be captured
 
 > Note: The micrsoft cognitive service is not free and you will need to provide this program with a subscription key in order to use it. See more info here: https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
 
-# Setup
+# Download & Install
 
 ## Step 1 - Download latest release
 
@@ -18,7 +18,7 @@ Extract the files from the zip into a location on your hard drive.
 
 Enter Azure key information and settings you would like. Don't forget to click Save.
 
-# Starting Subtitles
+# Setup Subtitles
 
  There are two options for running the subtitles depending on your capture program. Option 1 (browser source) is preferred, but does not work with streamlabs OBS.
 
