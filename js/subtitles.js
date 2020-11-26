@@ -114,7 +114,6 @@
     });
 
     function updateSubtitleStyle(style) {
-        subtitles.style.backgroundColor = settings.backgroundColor;
         subtitles.style = style;
     }
 

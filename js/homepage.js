@@ -100,7 +100,7 @@ function saveSettings(){
     newSettings.backgroundColor = bgColorSelect.value;
     newSettings.customStlye = customStyleInput.value;
 
-    fs.writeFile('./settings.js', 'function getSettings() { return ' + inspect(newSettings) + '}', function (err) {
+    fs.writeFile(__dirname + '/settings.js', 'function getSettings() { return ' + inspect(newSettings) + '}', function (err) {
         if (err) throw err;
     });    
 }
