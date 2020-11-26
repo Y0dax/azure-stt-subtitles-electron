@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OBS STT Subtitles</title>
+</head>
+
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/app.css" />
+<link rel="stylesheet" href="../css/materialize.css" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<!-- 'monolith' theme -->
+
+<body>
+    <h4>OBS STT Subtitles</h4>
+    <div class="title-bar">
+        <a id="close" class="waves-effect waves-light btn-flat">
+
+            <i class="material-icons white-text">close</i>
+        </a>
+        <a id="maximize" class="waves-effect waves-light btn-flat">
+            <i class="material-icons white-text">crop_3_2</i>
+        </a>
+
+        <a id="minimize" class="waves-effect waves-light btn-flat">
+            <i class="material-icons white-text">minimize</i>
+        </a>
+    </div>
+    <div class="content">
+        <form action="#" id="settingsForm">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="azureKey" type="password" class="white-text text-darken-1" >
+                    <label for="azureKey">Azure Subscription Key</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="azureRegion" type="text" placeholder="Ex: 'eastus2'"class="white-text text-darken-1">
+                    <label for="azureRegion">Azure Region</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="clearTime" type="number" class="white-text text-darken-1" required aria-required="true" min=2>
+                    <label for="clearTime">Clear Time (seconds)</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="maxWords" type="number" class="white-text text-darken-1" required aria-required="true" min=1>
+                    <label for="maxWords">Max Words</label>
+                </div>
+            </div>
+                <div class="row">
+                    <p class="col s3">
+                        <label>
+                            <input type="checkbox" class="filled-in white-text text-darken-1" id="punctuationChkBx" />
+                            <span>Auto Punctuation</span>
+                        </label>
+                    </p>
+                    <p class="col s3">
+                        <label>
+                            <input type="checkbox" class="filled-in white-text text-darken-1" id="profanityChkBx" />
+                            <span>Filter Profanity</span>
+                        </label>
+                    </p>
+                    <div class="input-field col s6">
+                        <input id="backgroundColor" type="text" class="white-text text-darken-1">
+                        <label for="backgroundColor">Background Color</label>
+                        <span class="helper-text white-text">Leave blank or use 'transparent' for transparent. Takes any valid css color hex or name.</span>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea  id="customStyle" placeholder="Ex: color:#FFFFFF;font-weight:500;" type="text" class="materialize-textarea white-text text-darken-1"></textarea>
+                    <label for="customStyle">Custom Subtitle Style CSS</label>
+                    <span class="helper-text white-text">Applies any valid css without brackets to the subtitle text</span>
+                </div>
+            </div>
+            <div class="right">
+                <button class="btn waves-effect waves-light" name="action" type="submit" id="saveSettingsBtn">Save
+                    <i class="material-icons right">save</i>
+                </button>
+                <a class="btn waves-effect waves-light" name="action" id="subtitlesBtn" href="./subtitles.html"
+                    target="_blank">Start Subtitles
+                    <i class="material-icons right">open_in_new</i>
+                </a>
+
+        </form>
+    </div>
+    <p class="credit">Made by Y0dax</p>
+    <script src="../js/materialize.js"></script>
+    <script src="../settings.js"></script>
+    <script>
+        // You can also require other files to run in this process
+        require('../js/homepage.js')
+    </script>
+</body>
+
+</html>

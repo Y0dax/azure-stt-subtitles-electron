@@ -1,0 +1,72 @@
+html, body {
+    margin: 0;
+    background: rgb(32 33 36);
+    color: white;
+}
+
+h4 {
+    padding-left: 1.5rem;
+}
+
+body::-webkit-scrollbar, div::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.draggable-area {
+    -webkit-app-region: drag;
+}
+
+.checkboxes {
+    margin-left: 10px;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+    color: rgb(0, 204, 204) !important;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid rgb(0, 204, 204) !important;
+    box-shadow: 0 1px 0 0 rgb(0, 204, 204) !important;
+}
+
+.input-field textarea:focus + label {
+    color: rgb(0, 204, 204) !important;
+}
+
+.input-field textarea:focus {
+    border-bottom: 1px solid rgb(0, 204, 204) !important;
+    box-shadow: 0 1px 0 0 rgb(0, 204, 204) !important;
+}
+
+#saveSettingsBtn #subtitlesBtn{
+    background-color: rgb(0, 204, 204) !important;
+}
+
+
+.title-bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    -webkit-app-region: drag;
+}
+
+.title-bar>a {
+    float: right;
+    -webkit-app-region: no-drag;
+}
+
+.credit {
+    position: fixed;
+    font-size: 12px;
+    left: 5;
+    bottom: 0;
+}
+
+.buttons {
+    padding: 2rem;
+}

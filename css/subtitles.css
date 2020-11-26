@@ -7,8 +7,7 @@ html, body {
     overflow: hidden;
 }
 
-body::-webkit-scrollbar,
-div::-webkit-scrollbar {
+body::-webkit-scrollbar, div::-webkit-scrollbar {
     display: none;
 }
 
@@ -17,12 +16,10 @@ div#subtitle {
     bottom: 74vh;
     left: 0px;
     background: transparent;
-    font-family: "San Francisco",
-        "Helvetica Neue", "Helvetica",
-        Arial, Sans-Serif;
-    font-size: calc( 3vh + 3vw );
-    font-weight: 200;
-    line-height: calc( 4vh + 3vw );
+    font-family: "San Francisco", "Helvetica Neue", "Helvetica", Arial, Sans-Serif;
+    font-size: calc( 3vh + 3vw);
+    font-weight: 300;
+    line-height: calc( 4vh + 3vw);
     color: #fefef2;
     text-shadow: 3px 1px 4px #222;
     display: flex;
@@ -36,25 +33,40 @@ div#subtitle {
     height: auto;
 }
 
-.draggable-area{
+.draggable-area {
     -webkit-app-region: drag;
-    height: 40px; 
+    height: 40px;
     width: 100%;
 }
 
-.buttons{
+.buttons {
     position: absolute;
-    left:    0;
-    bottom:   0;
+    left: 0;
+    bottom: 0;
 }
 
 @keyframes smooth-in {
-      0% { transform: translateX(-100vw) scale(1.0); opacity: 0.0; }
-    100% { transform: translateX(0vw)    scale(1.0); opacity: 1.0; }
+    0% {
+        transform: translateX(-100vw) scale(1.0);
+        opacity: 0.0;
+    }
+    100% {
+        transform: translateX(0vw) scale(1.0);
+        opacity: 1.0;
+    }
 }
 
 @keyframes smooth-out {
-    0% { transform: translateX(0vw)   scale(1.0); opacity: 1.0; }
-   99% { transform: translateX(100vw) scale(0.2); opacity: 0.0; }
-  100% { transform: translateX(100vw) scale(0.2); opacity: 0.0; }
+    0% {
+        transform: translateX(0vw) scale(1.0);
+        opacity: 1.0;
+    }
+    99% {
+        transform: translateX(100vw) scale(0.2);
+        opacity: 0.0;
+    }
+    100% {
+        transform: translateX(100vw) scale(0.2);
+        opacity: 0.0;
+    }
 }
