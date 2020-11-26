@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "package-win": "electron-packager . AzureSTTSubtitles --overwrite --asar=false --platform=win32 --arch=x64 --icon=media/topic.ico --prune=true --out=release-builds"
   },
   "keywords": [],
   "author": "",
