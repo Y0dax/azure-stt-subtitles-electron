@@ -25,8 +25,8 @@ Enter Azure key information and settings you would like. Don't forget to click S
 ## Option 1 - Add an OBS Browser Source (Works with OBS)
 
 ### Step 1: Add a new browser source
-1. enter the file location of the subtitles.html with `file:///` in front. I.e. `file:///C://azure-stt-subtitles-electron/resources/app/html/subtitles.html`
- - Subtitles.html is located in the resources\app\html folder.
+1. enter the file location of the subtitles.html with `file:///` in front. I.e. `file:///C://AzureSTTSubtitles-win32-x64/resources/app/html/subtitles.html`
+ - Subtitles.html is located in the resources/app/html folder.
 2. Check the options for shutdown source when not visible and refresh browser when scene becomes active.
 
 ### Step 2: Add OBS launch parameter to OBS shortcut
@@ -63,8 +63,10 @@ Remember to close the application or source when not in use to save cost of bein
 
 ## (Advanced) Change Font Style via URL when using browser source
 
-Custom font style can easily be applied using the input field in the application, but there is an additional override available for those that want it.
-The font style can be applied via the URL of the browser source. This will take priority over the style input in the application. It must be URL encoded.
+Custom font style can easily be applied using the input field in the application, but there is an additional override available for those that want it. This is mainly available for those that want to copy their pubnub URL style css without URL decoding it.
+The font style can be applied via the URL of the browser source. This will take priority over the style input in the application. 
+
+The css must be URL encoded if put in the url. You can use a tool such as https://www.urlencoder.org/ to convert it, or just use the input field in the application instead without needing encoding.
 
 Examples:
  - Set Style: `?style=CSS_HERE`
@@ -74,7 +76,14 @@ Examples:
 
 Here are some pre-built options to try:
 
- - Clean: C:/obs-subtitles-cortana/subtitles.html?style=color%3Argba(0%2C0%2C0%2C.9)%3Btext-shadow%3A0%200%205px%20%23fff%3B
- - CC Caption: C:/obs-subtitles-cortana/subtitles.html?style=background%3A%23000%3Bfont-weight%3A600%3Btext-transform%3Auppercase%3Btext-shadow%3Anone%3Bpadding%3A10px%3B
- - Rainbow: C:/obs-subtitles-cortana/subtitles.html?style=background%3Alinear-gradient(to%20right%2Corange%2C%23ff0%2Cgreen%2C%230ff%2C%2300f%2Cviolet)%20100%25%3B-webkit-background-clip%3Atext%3B-webkit-text-fill-color%3Atransparent%3Btext-shadow%3Anone%3B
+ - Clean: .../subtitles.html?style=color%3Argba(0%2C0%2C0%2C.9)%3Btext-shadow%3A0%200%205px%20%23fff%3B
+ - CC Caption: .../subtitles.html?style=background%3A%23000%3Bfont-weight%3A600%3Btext-transform%3Auppercase%3Btext-shadow%3Anone%3Bpadding%3A10px%3B
+ - Rainbow: .../subtitles.html?style=background%3Alinear-gradient(to%20right%2Corange%2C%23ff0%2Cgreen%2C%230ff%2C%2300f%2Cviolet)%20100%25%3B-webkit-background-clip%3Atext%3B-webkit-text-fill-color%3Atransparent%3Btext-shadow%3Anone%3B
+ 
+ Here are the same styles without URL encoding that can be put into the Custom Subtitle CSS field instead:
+ 
+ - Clean: `color:rgba(0,0,0,.9);text-shadow:0 0 5px #fff;`
+ - CC Caption: `background:#000;font-weight:600;text-transform:uppercase;text-shadow:none;padding:10px;`
+ - Rainbow: `background:linear-gradient(to right,orange,#ff0,green,#0ff,#00f,violet) 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;`
+ 
 
