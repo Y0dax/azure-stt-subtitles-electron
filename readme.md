@@ -40,7 +40,9 @@ OBS bug documented here: https://obsproject.com/forum/threads/using-browser-as-s
 
 Make sure to start OBS with this shortcut for the subtitles to work. If the subtitle program cannot access your microphone, a message will display after 15 seconds regarding this step.
 
-Done! There is no need to use the "Start Subtitles" button in the app. It is only used for option 2.
+4. Done! 
+
+> NOTE: Do not use the "Start Subtitles" button in the app if using browser source. It is only used for option 2. The browser source can just be visiblity toggled for subtitles.
 
 ## Option 2 - Add an OBS Window Capture (Works with Streamlabs OBS)
 
