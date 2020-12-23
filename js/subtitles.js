@@ -8,12 +8,19 @@
     const settings = getSettings();
     const azureCognitionSubscriptionKey = settings.azureKey || '';
     const azureRegion = settings.azureRegion || '';
+    const sourceLang = settings.sourceLang || 'en-US'
     const backgroundColor = settings.backgroundColor || 'transparent';
     const clearTime = settings.clearTimeSeconds || 4;
     const maxWords = settings.maxWords || 250;
     const autopunctuation = settings.autoPunctuation;
     const profanityFilter = settings.profanityFilter;
     const autoShutoffTime = settings.autoShutoffTimeMinutes || 30;
+    const blacklistWordsString = settings.blacklistWords || '';
+    let blacklistRegex = undefined;
+    if (blacklistWordsString !== '') {
+        let regex = (blacklistWordsString.replace(/,/g, '|')).replace(/\*/g, '([a-z]+)?');
+        blacklistRegex = new RegExp('(\\b)(' + regex + ')(\\b)', 'gi');
+    }
     let urlStyle = uripart('style') || undefined;
     let subtitleStyle = urlStyle || settings.customStlye;
 
@@ -40,7 +47,7 @@
         }
 
         speechConfig.enableDictation();
-        speechConfig.speechRecognitionLanguage = "en-US";
+        speechConfig.speechRecognitionLanguage = sourceLang;
         if (autopunctuation !== true)
             speechConfig.setServiceProperty('punctuation', 'explicit', SpeechSDK.ServicePropertyChannel.UriQueryParameter);
         speechConfig.setProfanity(profanityFilter === true ? SpeechSDK.ProfanityOption.Masked : SpeechSDK.ProfanityOption.Raw);
@@ -94,7 +101,7 @@
                 clearTimeout(connectTimeout);
                 connectTimeout = null;
             }
-            updateSubtitles('Connected - Start Talking', true);
+            updateSubtitles('Connected - Begin Speaking', true);
         };
 
         window.addEventListener('obsSourceActiveChanged', function (event) {
@@ -107,7 +114,7 @@
         });
 
         connectTimeout = setTimeout(function () {
-            subtitles.innerHTML = 'Unable to connect - network issue or unable to gain microphone access.';
+            subtitles.innerHTML = 'Unable to connect due to network issue or unable to gain microphone access.';
         }, 15000);
 
         recognizer.startContinuousRecognitionAsync();
@@ -118,7 +125,7 @@
     }
 
     function updateSubtitles(speech, timeout) {
-        subtitles.innerHTML = getMaxWords(speech);
+        subtitles.innerHTML = filterBlacklist(getMaxWords(speech));
 
         // Clear Text after moments of silence.
         if (timeout) {
@@ -133,6 +140,15 @@
     function getMaxWords(text) {
         let words = text.split(' ');
         return words.slice(-maxWords).join(' ');
+    }
+
+    function filterBlacklist(text) {
+        if (blacklistRegex === undefined) return text;
+
+        let newtext = text.replace(blacklistRegex, function ($2) {
+            return $2.replace(/./g, '*')
+        });
+        return newtext;
     }
 
     // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
