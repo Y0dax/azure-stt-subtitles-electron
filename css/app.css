@@ -8,9 +8,9 @@ h4 {
     padding-left: 1.5rem;
 }
 
-body::-webkit-scrollbar, div::-webkit-scrollbar {
+/* body::-webkit-scrollbar, div::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .content {
     padding: 1rem;

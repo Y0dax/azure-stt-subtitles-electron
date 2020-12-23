@@ -7,6 +7,7 @@ function getSettings() { return {
   profanityFilter: true,
   azureKey: '',
   azureRegion: '',
-  sourceLang: 'en-us',
-  customStlye: ''
+  sourceLang: 'en-US',
+  customStlye: '',
+  blacklistWords: ''
 }}

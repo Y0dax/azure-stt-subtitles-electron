@@ -22,6 +22,7 @@ const maxWordsInput = document.getElementById('maxWords');
 const clearTimeInput = document.getElementById('clearTime');
 const bgColorSelect = document.getElementById('backgroundColor');
 const customStyleInput = document.getElementById('customStyle');
+const blacklsitWords = document.getElementById('blacklistWords')
 
 document.onreadystatechange = (event) => {
     if (document.readyState == "complete") {
@@ -68,17 +69,18 @@ function handleWindowControls() {
 }
 
 function initSettings() {
-    azureKeyInput.value = settings.azureKey;
-    azureRegionInput.value = settings.azureRegion;
+    azureKeyInput.value = settings.azureKey || '';
+    azureRegionInput.value = settings.azureRegion || '';
 
-    clearTimeInput.value  = settings.clearTimeSeconds;
-    maxWordsInput.value  = settings.maxWords;
+    clearTimeInput.value  = settings.clearTimeSeconds || 4;
+    maxWordsInput.value  = settings.maxWords || 150;
 
-    punctuationCheckbox.checked = settings.autoPunctuation;
-    profanityCheckbox.checked = settings.profanityFilter;
+    punctuationCheckbox.checked = settings.autoPunctuation || true;
+    profanityCheckbox.checked = settings.profanityFilter || true;
 
-    bgColorSelect.value = settings.backgroundColor;
-    customStyleInput.value = settings.customStlye;
+    bgColorSelect.value = settings.backgroundColor || '';
+    customStyleInput.value = settings.customStlye || '';
+    blacklsitWords.value = settings.blacklistWords || '';
 
     M.updateTextFields();
 }
@@ -99,6 +101,8 @@ function saveSettings(){
 
     newSettings.backgroundColor = bgColorSelect.value;
     newSettings.customStlye = customStyleInput.value;
+
+    newSettings.blacklistWords = blacklsitWords.value.replace(/\s/g, '');
 
     fs.writeFile(__dirname + '/settings.js', 'function getSettings() { return ' + inspect(newSettings) + '}', function (err) {
         if (err) throw err;

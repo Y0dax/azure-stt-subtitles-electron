@@ -4,8 +4,8 @@ function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
-    minWidth: 450,
-    minHeight: 600,
+    minWidth: 500,
+    minHeight: 725,
     transparent: false,
     frame: false,
     webPreferences: {
@@ -18,7 +18,7 @@ function createWindow() {
    mainWindow.loadURL(`file://${__dirname}/html/index.html`)
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
