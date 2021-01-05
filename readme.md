@@ -1,14 +1,14 @@
 # OBS STT Subtitles using Microsoft Azure Cognitive SDK
 
-Welcome! This application presents Speech to Text subtitles that can be captured by OBS or other programs. It is powered by Microsoft's Cognitive STT service. This is the same service that Microsoft Cortana uses.
+Welcome! This application presents Speech to Text subtitles that can be captured by OBS or other programs. It is powered by Microsoft's Cognitive STT service.
 
 > Note: The micrsoft cognitive service is not free and you will need to provide this program with a subscription key in order to use it. See more info here: https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
 
-![subtitles](https://user-images.githubusercontent.com/45214/81859404-0abbf580-951a-11ea-9334-9fbee17416fd.gif)
+![subtitles](media/subs.gif)
 
 # Create an Azure Account and obtain a Cognitive Service API Key
 
-See [these instructions]('../docs/azure-setup.md') to setup an Azure account and STT service Key.
+See [these instructions](docs/azure-setup.md) to setup an Azure account and STT service Key.
 
 <br/>
 
@@ -30,7 +30,7 @@ Enter Azure key information and settings you would like. Don't forget to click S
 
  There are two options for running the subtitles depending on your capture program. Option 1 (browser source) is preferred, but does not work with streamlabs OBS.
 
-## Option 1 - Add an OBS Browser Source (Works with OBS)
+## Option 1 - Add an OBS Browser Source (Works with OBS) *Recommended
 
 ### Step 1: Add a new browser source
 1. Enter the file location of the subtitles.html with `file:///` in front. I.e. `file:///C://AzureSTTSubtitles-win32-x64/resources/app/html/subtitles.html` or use the "Local File" option.
