@@ -2,7 +2,7 @@
 
 Welcome! This application presents Speech to Text subtitles that can be captured by OBS or other programs. It is powered by Microsoft's Cognitive STT service.
 
-> Note: The micrsoft cognitive service is not free and you will need to provide this program with a subscription key in order to use it. See more info here: https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
+> :info: Note: The micrsoft cognitive service is not free and you will need to provide this program with a subscription key in order to use it. See more info here: https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
 
 ![subtitles](media/subs.gif)
 
@@ -49,7 +49,7 @@ OBS bug documented here: https://obsproject.com/forum/threads/using-browser-as-s
 
 > Make sure to start OBS with this shortcut for the subtitles to work. If the subtitle program cannot access your microphone, a message will display after 15 seconds regarding this step.
 >
-> NOTE: Do not use the "Start Subtitles" button in the app if using browser source. It is only used for option 2 (window capture). The browser source can just be visiblity toggled for subtitles.
+> :warning: Do not use the "Start Subtitles" button in the app if using browser source. It is only used for option 2 (window capture). The browser source can just be visiblity toggled for subtitles.
 
 <br/>
 
@@ -64,9 +64,7 @@ OBS bug documented here: https://obsproject.com/forum/threads/using-browser-as-s
 - In order to make the subtitle window transparant, you can add a color key filer for whichever color you chose the background color of the subtitles to be. Default is transparent so try using blue or green.
 - Adjust the similarity and softness until the subtitles appear cleanly without background color.
 
-## Setup Complete!
-
-> Remember to close the application or source when not in use to save cost of being connected to the STT service.
+> :info: Remember to close the application or source when not in use to save cost of being connected to the STT service.
 
 <br><br>
 # Additional Customizations
@@ -78,7 +76,7 @@ Blacklisted words will be replaced with asterisk characters. Enter them in the b
 Blacklisted words support wildcards (*) which will match any characters where it is placed in the word.
 
 Example:
-> `*rap` will match `rap` and `trap`, but not `rapping` or `trapping`. 
+> :info: `*rap` will match `rap` and `trap`, but not `rapping` or `trapping`. 
 >
 >Using `*rap*` will match any word with the phrase `rap` in it such as `trapping`.
 
