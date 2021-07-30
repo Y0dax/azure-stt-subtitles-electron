@@ -14,6 +14,7 @@ const closeWindowBtn = document.getElementById('close');
 const form = document.getElementById("settingsForm");
 const azureKeyInput = document.getElementById('azureKey');
 const azureRegionInput = document.getElementById('azureRegion');
+const sourceLangInput = document.getElementById('sourceLang');
 
 const punctuationCheckbox = document.getElementById('punctuationChkBx');
 const profanityCheckbox = document.getElementById('profanityChkBx');
@@ -71,6 +72,7 @@ function handleWindowControls() {
 function initSettings() {
     azureKeyInput.value = settings.azureKey || '';
     azureRegionInput.value = settings.azureRegion || '';
+    sourceLangInput.value = settings.sourceLang || 'en-US';
 
     clearTimeInput.value  = settings.clearTimeSeconds || 4;
     maxWordsInput.value  = settings.maxWords || 150;
@@ -92,6 +94,7 @@ function saveSettings(){
 
     newSettings.azureKey = azureKeyInput.value;
     newSettings.azureRegion = azureRegionInput.value;
+    newSettings.sourceLang = sourceLangInput.value;
 
     newSettings.clearTimeSeconds = clearTimeInput.value;
     newSettings.maxWords = maxWordsInput.value;
