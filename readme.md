@@ -14,7 +14,7 @@ See [these instructions](docs/azure-setup.md) to setup an Azure account and STT 
 
 # Download & Install
 
-## Step 1 - Download latest release
+## Step 1 - Download the latest release
 
 Download the electron app from the releases tab
 
@@ -35,9 +35,9 @@ Enter Azure key information and settings you would like. Don't forget to click S
 ### Step 1: Add a new browser source
 
 - Enter the file location of the subtitles.html with `file:///` in front. I.e. `file:///C://AzureSTTSubtitles-win32-x64/resources/app/html/subtitles.html` or use the "Local File" option.
-- Note: Local file can also be used though you will not be able to enter css within the URL. This is not typically an issue, however, as custom CSS can be applied in the accompanying app.
+- Note: Local file can also be used though you will not be able to enter CSS within the URL. However, this is not typically an issue, as custom CSS can be applied in the accompanying app.
 - Subtitles.html is located in the resources/app/html folder.
-- Check the options for shutdown source when not visible and refresh browser when scene becomes active.
+- Check the options for shutdown source when not visible and refresh the browser when the scene becomes active.
 - In order to **click** and start the browser content, right-click browser source and select Interact to launch an interactive browser window.  
   ![OBS Browser Source shows click message. Context menu for browser source is open. Interact command is highlighted.](media/obs-browser-source-interact.png "OBS Browser Interact")
 
@@ -54,7 +54,7 @@ OBS bug documented here: <https://obsproject.com/forum/threads/using-browser-as-
 
 > :information_source: Make sure to start OBS with this shortcut for the subtitles to work. If the subtitle program cannot access your microphone, a message will display after 15 seconds regarding this step.
 >
-> :warning: Do not use the "Start Subtitles" button in the app if using browser source. It is only used for option 2 (window capture). The browser source can just be visibility toggled for subtitles.
+> :warning: Do not use the "Start Subtitles" button in the app if using a browser source. It is only used for option 2 (window capture). The browser source can just be visibility toggled for subtitles.
 
 <br/>
 
@@ -68,10 +68,10 @@ OBS bug documented here: <https://obsproject.com/forum/threads/using-browser-as-
 
 ### Step 2: Add a Color Key Filter
 
-- In order to make the subtitle window transparant, you can add a color key filer for whichever color you chose the background color of the subtitles to be. Default is transparent so try using blue or green.
+- In order to make the subtitle window transparent, you can add a color key filer for whichever color you chose the background color of the subtitles to be. Default is transparent so try using blue or green.
 - Adjust the similarity and softness until the subtitles appear cleanly without background color.
 
-> :information_source: Remember to close the application or source when not in use to save cost of being connected to the STT service.
+> :information_source: Remember to close the application or source when not in use to save the cost of being connected to the STT service.
 
 <br><br>
 
