@@ -117,7 +117,16 @@
             subtitles.innerHTML = 'Unable to connect due to network issue or unable to gain microphone access.';
         }, 15000);
 
-        recognizer.startContinuousRecognitionAsync();
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.indexOf(' electron/') > -1) {
+            recognizer.startContinuousRecognitionAsync();
+        }
+        else {
+            subtitles.innerHTML = 'Click anywhere to start.';
+            document.addEventListener('click', function () {
+                recognizer.startContinuousRecognitionAsync();
+            });
+        }
     });
 
     function updateSubtitleStyle(style) {
