@@ -38,6 +38,8 @@ Enter Azure key information and settings you would like. Don't forget to click S
 - Note: Local file can also be used though you will not be able to enter css within the URL. This is not typically an issue, however, as custom CSS can be applied in the accompanying app.
 - Subtitles.html is located in the resources/app/html folder.
 - Check the options for shutdown source when not visible and refresh browser when scene becomes active.
+- In order to **click** and start the browser content, right-click browser source and select Interact to launch an interactive browser window.  
+  ![OBS Browser Source shows click message. Context menu for browser source is open. Interact command is highlighted.](media/obs-browser-source-interact.png "OBS Browser Interact")
 
 ### Step 2: Add OBS launch parameter to OBS shortcut
 
@@ -47,11 +49,12 @@ OBS bug documented here: <https://obsproject.com/forum/threads/using-browser-as-
 
 1. Locate and right click on the shortcut you use to open OBS.
 2. Select "Properties"
-3. In the "Target" box, add `--use-fake-ui-for-media-stream` to the very end. It should look similar to `"C:\Program Files (x86)\obs-studio\bin\64bit\obs64.exe" --use-fake-ui-for-media-stream`
+3. In the "Target" box, add `--enable-media-stream` to the very end. It should look similar to `"C:\Program Files (x86)\obs-studio\bin\64bit\obs64.exe" ----enable-media-stream`  
+  ![Custom OBS Shortcut with --enable-media-stream parameter assigned](media/obs-shortcut-enable-media-stream.png "Custom OBS Shortcut")
 
 > :information_source: Make sure to start OBS with this shortcut for the subtitles to work. If the subtitle program cannot access your microphone, a message will display after 15 seconds regarding this step.
 >
-> :warning: Do not use the "Start Subtitles" button in the app if using browser source. It is only used for option 2 (window capture). The browser source can just be visiblity toggled for subtitles.
+> :warning: Do not use the "Start Subtitles" button in the app if using browser source. It is only used for option 2 (window capture). The browser source can just be visibility toggled for subtitles.
 
 <br/>
 
